@@ -20,6 +20,8 @@ Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('
 Route::group(['middleware' => 'auth', 'prefix' => 'app'], function () {
     Route::get('/home', function(){ return view('app.home'); })->name('app.home');
     Route::get('/settings', function(){ return view('app.settings'); })->name('app.settings');
+   
+    Route::get('/create', function(){ return view('app.create'); })->name('app.create');
 });
 
 //post routes

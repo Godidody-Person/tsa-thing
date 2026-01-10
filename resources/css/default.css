@@ -188,6 +188,8 @@ button.morph, .button.morph{
 .col{
     display: flex;
     gap:10px;
+
+    align-items: center;
 }
 
 .col.background{
@@ -229,7 +231,7 @@ button.morph, .button.morph{
     margin-left: auto;
 }
 
-.navbar > a, .first-col > a{
+.navbar > a:not(.button), .first-col > a:not(.button){
     color: var(--c1);
 
     font-family: var(--f-h);
@@ -271,6 +273,8 @@ button.morph, .button.morph{
 
     border-radius: var(--br);
 
+    background-color: var(--bg1);
+
     width: fit-content;
 
     outline:1px solid var(--bg4);
@@ -285,17 +289,6 @@ button.morph, .button.morph{
     width: min(100%, 800px);
 }
 
-.everything{
-    max-width: calc(100% - 40px);
-    margin:20px;
-
-    width: fit-content;
-    height: fit-content;
-
-    display: flex;
-    flex-direction: column;
-}
-
 
 
 
@@ -306,12 +299,15 @@ button.morph, .button.morph{
 /* resource */
 .resources{
     display: flex;
-    max-width: 100%;
 
-    overflow: auto;
+    width: fit-content;
+    
     padding-block: 10px;
     padding-left: 10px;
+
     transform:translateX(-10px);
+
+    gap:12px;
 
     background-color: var(--bg2);
 }
@@ -337,6 +333,15 @@ button.morph, .button.morph{
 
 .resource:hover{
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.resources-wrapper{
+    max-width: 100%;
+    overflow: auto;
+}
+
+.resources-wrapper::-webkit-scrollbar{
+    display: none;
 }
 
 .resource > .floating{
@@ -379,9 +384,11 @@ button.morph, .button.morph{
 form{
     display: flex;
     flex-direction: column;
+
+    align-items: flex-start;
 }
 
-input{
+input, select{
     background-color: var(--bg2);
 
     border: 1px solid var(--bg4);
@@ -393,9 +400,11 @@ input{
     font-size: 0.9rem;
     font-weight: 500;
 
+    margin-block: 10px;
+
     width: 100%;
 
-    outline:0 solid var(--pt);
+    outline:0 solid rgba(46, 182, 255, 0.148);
 
     box-sizing: border-box;
 
@@ -406,10 +415,22 @@ input::placeholder{
     color: var(--c5);
 }
 
-input:focus{
-    outline:4px solid var(--pt);
+input:focus, select:focus{
+    outline-width:4px;
+
+    background-color: var(--bg1);
 
     transition: outline-width 0.2s var(--tr);
+}
+
+select{
+    position:relative;
+    appearance: none;
+
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" fill="none" stroke="black" stroke-width="2"/></svg>')
+        no-repeat right center;
+    background-size: 10px;
+    background-position: calc(100% - 10px);
 }
 
 label{

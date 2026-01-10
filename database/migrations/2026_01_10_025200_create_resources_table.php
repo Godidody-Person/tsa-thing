@@ -14,6 +14,13 @@ return new class extends Migration
         Schema::create('resources', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->string('name', 255);
+            $table->text('description', 511);
+
+            $table->integer('creator_id');
+            $table->index('creator_id');
+            $table->foreign('creator_id')->references('id')->on('users');
         });
     }
 
