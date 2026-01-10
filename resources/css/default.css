@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root{
+    --f-h: "Eudoxus", sans-serif;
+    --f-b: "Inter", sans-serif;
+
+    --bg1: white;
+    --bg2: rgb(243, 243, 243);
+    --bg3: rgb(231, 231, 231);
+    --bg4: rgb(222, 222, 222);
+    --bg5: rgb(215, 215, 215);
+    --bgt: rgba(255,255,255,0.8);
+
+    --p1: rgb(35, 219, 93);
+    --p2: rgb(28, 184, 78);
+
+    --pt: rgba(41, 253, 108, 0.216);
+
+    --c1: rgb(28, 37, 49);
+    --c2: rgb(40, 50, 63);
+    --c3: rgb(55, 65, 77);
+    --c4: rgba(55, 65, 77, 0.698);
+    --c5: rgba(55, 65, 77, 0.37);
+
+    --br: 25px;
+
+    --tr: ease-out;
+}
+
+/* fonts */
+@font-face {
+    font-family: 'Eudoxus';
+    src: url('/public/fonts/EudoxusSansGX.woff');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/fonts/Inter-VariableFont_opsz\,wght.ttf');
+}
+
+
+
+
+
+
+
+
+
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body{
+    margin:0;
+
+    font-family: var(--f-b);
+
+    padding-top: 6rem;
+
+    background-color: var(--bg2);
+}
+
+
+
+
+/* defaults */
+h1, h2, h3, a{
+    margin-block: 10px;
+}
+
+h4, h5, h6, p{
+    margin-block: 5px;
+}
+
+h4{
+    font-size: 1.1rem;
+}
+
+h1{
+    font-size: 2rem;
+    font-family: var(--f-h);
+
+    color: var(--c1);
+}
+
+h2{
+    font-size: 1.6rem;
+    color: var(--c2);
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--f-h);
+}
+
+p{
+    font-size:1.1rem;
+    font-family: var(--f-b);
+
+    color: var(--c3);
+}
+
+p.faint{
+    opacity: 0.8;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+/* button */
+button, .button{
+    background-color: var(--p1);
+    padding: 0.7rem 1rem;
+
+    text-decoration: none;
+
+    font-family: var(--f-h);
+    font-size: 0.95rem;
+    font-weight: bold;
+    
+    color: var(--bg1);
+    
+    border-radius: var(--br);
+    border:none;
+
+    display: inline-block;
+
+    cursor: pointer;
+    
+    transition: 0.2s var(--tr);
+}
+
+button:hover, .button:hover{
+    opacity: 0.8;
+}
+
+button:active, .button:active{
+    scale: 0.96;
+}
+
+button.clear, .button.clear{
+    background-color: transparent;
+
+    color: var(--c1);
+ 
+    transition: .1s var(--tr);
+}
+
+button.clear:hover, .button.clear:hover{
+    background-color: var(--bg3);
+
+    transition: .1s var(--tr);
+}
+
+button.normal, .button.normal{
+    background-color: var(--bg1);
+    border:1px solid var(--bg4);
+
+    color: var(--c1);
+
+    transition: .2s var(--tr);
+}
+
+button.normal:hover, .button.normal:hover{
+    background-color: var(--bg4);
+}
+
+button.mono, .button.mono{
+    background-color: var(--bg2);
+    outline:1px solid var(--bg4);
+    color: var(--c1);
+}
+
+button.small, .button.small{
+    margin-block: 5px;
+    padding: 9px 12px;
+    font-size: 0.8rem;
+}
+
+button.morph, .button.morph{
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.col{
+    display: flex;
+    gap:10px;
+}
+
+.col.background{
+    border: 1px solid var(--bg4);
+    border-radius: var(--br);
+
+    background-color: var(--bg2);
+
+    padding-inline: 1rem;
+}
+
+
+
+
+
+
+
+
+
+/* navbar */
+.navbar{
+    display: flex;
+
+    position: fixed;
+
+    height:6rem;
+    
+    box-sizing: border-box;
+    width: calc(100% - 40px);
+    left:20px;
+    right:20px;
+    top:0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar > .col{
+    margin-left: auto;
+}
+
+.navbar > a, .first-col > a{
+    color: var(--c1);
+
+    font-family: var(--f-h);
+    font-size: 1rem;
+    font-weight: 420;
+
+    padding: 0.5rem 1rem;
+
+    text-decoration: none;
+}
+
+.first-col{
+    display: flex;
+
+    padding: 0.4rem 0.6rem;
+
+    background-color: var(--bg1);
+    border-radius: var(--br);
+}
+
+.navbar > a:hover, .first-col > a:hover{
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+/* panel */
+.panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 22px;
+
+    border-radius: var(--br);
+
+    width: fit-content;
+
+    outline:1px solid var(--bg4);
+}
+
+.panel.center{
+    margin: 20px;
+    margin-inline: auto;
+}
+
+.panel.wide{
+    width: min(100%, 800px);
+}
+
+.everything{
+    max-width: calc(100% - 40px);
+    margin:20px;
+
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+/* resource */
+.resources{
+    display: flex;
+    max-width: 100%;
+
+    overflow: auto;
+    padding-block: 10px;
+    padding-left: 10px;
+    transform:translateX(-10px);
+
+    background-color: var(--bg2);
+}
+
+.resource{
+    background-color: var(--bg1);
+
+    display: grid;
+    grid-template-columns: 15rem;
+    grid-template-rows: 15rem auto;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border-radius: var(--br);
+    border: 1px solid var(--bg4);
+
+    position:relative;
+
+    transition: .2s var(--tr);
+}
+
+.resource:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.resource > .floating{
+    position:absolute;
+
+    top:5px;
+    left:5px;
+}
+
+.resource > .floating > button,
+.resource > .floating > .button{
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.resource > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resource-info{
+    background-color: var(--bg1);
+    padding: 10px 20px;
+
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+
+
+
+
+
+/* form */
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    background-color: var(--bg2);
+
+    border: 1px solid var(--bg4);
+    border-radius: var(--br);
+
+    padding: 0.8rem 1rem;
+
+    font-family: var(--f-b);
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    width: 100%;
+
+    outline:0 solid var(--pt);
+
+    box-sizing: border-box;
+
+    transition: outline-width 0.2s var(--tr);
+}
+
+input::placeholder{
+    color: var(--c5);
+}
+
+input:focus{
+    outline:4px solid var(--pt);
+
+    transition: outline-width 0.2s var(--tr);
+}
+
+label{
+    font-size: 0.9rem;
+    font-weight: 480;
+
+    padding-left: 5px;
+
+    color: var(--c4);
+}
+
+
+
+
+
+
+/* material symbols */
+.material-symbols-outlined{
+    font-size: inherit;
+    transform: translateY(10%);
+    scale:1.05;
+    margin-inline: 2px;
+}

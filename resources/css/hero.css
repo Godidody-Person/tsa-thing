@@ -1,0 +1,45 @@
+.section > h1{
+    font-size: 3.4rem;
+    text-align: center;
+}
+
+.section > p{
+    text-align: center;
+}
+
+.section, .hero-grid > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section{
+    min-height: 80dvh;
+    position:relative;
+}
+
+.hero-grid > div{
+    border-right: 1px dashed var(--c4);
+ 
+    padding: 20px 24px;
+}
+
+.hero-grid{
+    display: grid;
+    /* bento */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "box-1 box-2 box-3 box-3"
+    "box-4 box-4 box-3 box-3";
+
+    border-left: 1px dashed var(--c4);
+    border-top: 1px dashed var(--c4);
+    border-bottom: 1px dashed var(--c4);
+
+    margin:20px;
+
+    border-radius: var(--br);
+
+    overflow: hidden;
+}
