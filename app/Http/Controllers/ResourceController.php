@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Resource;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 
@@ -32,7 +33,7 @@ class ResourceController extends Controller
         $path = Storage::disk('public')->putFile('images', $request->file('image'));
         $resource->image_path = $path;
 
-        $resource->creator_id = auth()->user()->id;
+        $resource->creator_id = Auth::user()->id;
 
         $resource->save();
 
