@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'app'], function () {
     Route::get('/home', function(){ return view('app.home'); })->name('app.home');
     Route::get('/settings', function(){ return view('app.settings'); })->name('app.settings');
    
-    Route::get('/create', function(){ return view('app.create'); })->name('app.create');
+    Route::get('/create', function(){ return view('app.create'); })->name('app.createPage');
 
     Route::get('/resources', function(){ return view('app.resources'); })->name('app.resources');
     Route::get('/resource/edit/{id}', [ResourceController::class, 'editResource'])->name('app.resource.edit');
