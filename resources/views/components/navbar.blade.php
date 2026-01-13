@@ -1,10 +1,16 @@
-<div class="navbar">
+<button class="toggle-navbar" aria-label="open navigation menu" onclick="document.getElementById('navbar').style.display=document.getElementById('navbar').style.display == 'flex' ? 'none' : 'flex';">
+    <i class="material-symbols-outlined">menu</i>
+</button>
+<div class="navbar" id="navbar">
     <div class="first-col">
         <a href="{{ route('home') }}"><strong>Home</strong></a>
         <a href="{{ route('resources') }}">Resources</a>
-        <a href="{{ route('resources') }}">New</a>
-        <a href="{{ route('resources') }}">Trending</a>
-        <a href="{{ route('resources') }}">About</a>
+        <form action="{{ route('search') }}" method="get">
+            <div class="col input">
+                <input type="text" name="search" placeholder="Search">
+                <button type="submit" aria-label="Search"><i class="material-symbols-outlined">search</i></button>
+            </div>
+        </form>
     </div>
 
     @auth

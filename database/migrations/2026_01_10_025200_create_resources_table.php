@@ -21,6 +21,12 @@ return new class extends Migration
             $table->integer('creator_id');
             $table->index('creator_id');
             $table->foreign('creator_id')->references('id')->on('users');
+
+            $table->string('type', 127);
+
+            $table->json('misc')->nullable();
+
+            $table->string('image_path', 255);
         });
     }
 

@@ -10,7 +10,7 @@ body{
 }
 
 .everything{
-    width: calc(100dvw - 110px - 300px);
+    /* width: calc(100dvw - 110px - 300px); */
     margin:20px;
 
     height: fit-content;
@@ -55,4 +55,34 @@ body{
 
 .sidebar > a:not(.button):hover{
     background-color: var(--bg2);
+}
+
+.see-more{
+    display: none;
+}
+
+@media(max-width: 800px){
+    .layout{
+        grid-template-columns: 100px 1fr;
+    }
+
+    .sidebar{
+        z-index: 999;
+    }
+    
+    .sidebar:focus-within span{
+        display: inline;
+    }
+
+    .sidebar:focus-within{
+        width: 300px;
+    }
+
+    .sidebar span{
+        display: none;
+    }
+
+    .see-more{
+        display: block;
+    }
 }

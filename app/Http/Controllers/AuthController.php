@@ -80,4 +80,9 @@ class AuthController extends Controller
 
         return redirect('/');
     }
+
+    public function viewProfile(Request $request, $id) {
+        $user = User::find($id);
+        return view('profile', compact('user'));
+    }
 }

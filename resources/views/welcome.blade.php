@@ -14,22 +14,19 @@
 
             border-radius: 20px;
 
-            align-items: start;
-
-            padding-left: 60px;
+            justify-content: center;
+            align-items: center;
         }
 
-        .section.hero > h1,
-        .section.hero > p{
+        .middle-thing > h1,
+        .middle-thing > p{
             color:white;
+            text-align: center;
         }
 
-        .section.hero > h1{
-            text-shadow: 0px 0px 15px rgba(0,0,0,0.5);
-        }
-
-        .section.hero > p{
-            opacity: 0.7;
+        .middle-thing > p{
+            opacity: 0.8;
+            font-size: 1rem;
         }
         
         .panel.hero{
@@ -40,30 +37,50 @@
             right:20px;
             bottom: 20px;
         }
+
+        .middle-thing{
+            background-color: rgba(0,0,0,0.1);
+            backdrop-filter: blur(20px);
+            
+            border-radius: var(--br);
+            outline:1px solid rgba(255,255,255,0.2);
+            padding: 1rem 1.4rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            margin-inline: 20px;
+        }
+
+        @media(max-width: 400px){
+            .section.hero{
+                margin-inline: 0;
+            }
+        }
     </style>
 @endsection
 
 @section('content')
     <div class="section hero">
-        <h1>Community Hub</h1>
-        <p>Communicate & Discover Unique Resources in Your Local Community.</p>
+        <div class="middle-thing">
+            <h1>Community Hub</h1>
+            <p>Communicate & Discover Unique Resources in Your Local Community.</p>
 
-        <div class="col">
-            @auth
-                <a href="{{ route('app.home') }}" class="button">Hub Home</a>
-                <a href="{{ route('resources') }}" class="button normal">Resources</a>
-            @else
-                <a href="{{ route('register') }}" class="button">Get Started</a>
-                <a href="{{ route('login') }}" class="button normal">Login</a>
-            @endauth
-        </div>
-
-        <div class="panel hero">
-            <h2>Gandalf's Weed Rave</h2>
-            <div class="col">
-                <a href="" class="button">Sign up</a>
-                <a href="" class="button mono"><i class="material-symbols-outlined">open_in_new</i></a>
+            <div class="col input">
+                <form action="{{ route('search') }}" method="get">
+                    <div class="col input">
+                        <input type="text" name="search" placeholder="Search your community...">
+                        <button aria-label="Search"><i class="material-symbols-outlined">search</i></button>
+                    </div>
+                </form>
             </div>
+        </div>
+        
+        <div class="panel hero" style="padding:1rem;">
+            <h3>Gandalf's Weed Rave</h3>
+
             <div class="col" style="scale:0.8">
                 <button class="normal">
                     <i class="material-symbols-outlined">chevron_left</i>
@@ -74,6 +91,7 @@
                 <button class="mono">
                     <i class="material-symbols-outlined">chevron_right</i>
                 </button>
+                <a href="" class="button"><i class="material-symbols-outlined">open_in_new</i></a>
             </div>
         </div>
     </div>
