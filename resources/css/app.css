@@ -86,3 +86,48 @@ body{
         display: block;
     }
 }
+
+@media(max-width: 400px){
+    .layout{
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar{
+        width: 100dvw;
+        margin: 0;
+        padding: 10px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar:focus-within{
+        width: 100%;
+        
+        flex-direction: column;
+    }
+
+    .sidebar:focus-within::after{
+        content: "Click outside to close";
+
+        font-size: 0.8rem;
+        color: var(--c4);
+        margin:0.4rem;
+    }
+
+    .sidebar > hr{
+        display: none;
+    }
+
+    .everything{
+        width: 100dvw;
+    }
+
+    .everything > div{
+        width: calc(100% - 40px);
+        box-sizing: border-box;
+    }
+}

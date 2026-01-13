@@ -4,9 +4,11 @@
 
 @section('styles')
     <style>
-        .banner {
+        .banner-image{
             width: 100%;
             height: 300px;
+
+            box-sizing: border-box;
 
             object-fit: cover;
 
@@ -23,7 +25,7 @@
 
             box-sizing: border-box;
 
-            outline:none !important;
+            border:none !important;
             background: linear-gradient(0deg, black, rgba(0,0,0,0));
 
             align-items:flex-start;
@@ -38,8 +40,17 @@
 
         .banner{
             position: relative;
+            height: 300px;
+        }
+
+        @media(max-width: 400px){
+            .everything > div{
+                width: calc(100% - 40px);
+                box-sizing: border-box;
+            }
         }
     </style>
+
 @endsection
 
 @section('content')
@@ -62,11 +73,11 @@
 
 </script>
     <div class="banner">
-        <img src="{{ asset('storage/' . $resource->image_path) }}" alt="{{ $resource->name }}" class="banner">
+        <img src="{{ asset('storage/' . $resource->image_path) }}" alt="{{ $resource->name }}" class="banner-image">
 
         <div class="panel banner-panel">
             <h1>{{ $resource->name }}</h1>
-            <p>{{ $resource->description }}</p>
+            <p style='max-width:100%; white-space:nowrap; overflow: hidden; text-overflow:ellipsis'>{{ $resource->description }}</p>
             @auth
                 @if($resource->creator_id === auth()->user()->id)
                     <div class="col">
