@@ -77,22 +77,5 @@
                 </form>
             </div>
         </div>
-        
-        <div class="panel hero" style="padding:1rem;">
-            <h3>Gandalf's Weed Rave</h3>
-
-            <div class="col" style="scale:0.8">
-                <button class="normal">
-                    <i class="material-symbols-outlined">chevron_left</i>
-                </button>
-
-                <p>1/6</p>
-
-                <button class="mono">
-                    <i class="material-symbols-outlined">chevron_right</i>
-                </button>
-                <a href="" class="button"><i class="material-symbols-outlined">open_in_new</i></a>
-            </div>
-        </div>
     </div>
 @endsection
