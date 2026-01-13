@@ -13,7 +13,6 @@
             <label for="type">Type of Resource</label>
             <select name="type" id="type">
                 <option value="event">Event</option>
-                <option value="support">Support Service</option>
                 <option value="nonprofit">Nonprofit Organization</option>
                 <option value="program">Community Program</option>
                 <option value="club">Community Club</option>
