@@ -192,6 +192,7 @@ button.small, .button.small{
 button.morph, .button.morph{
     background-color: rgba(0,0,0,0.3);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .col{
@@ -532,6 +533,7 @@ label{
 
     background-color: rgba(0,0,0,0.5);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     display:flex;
     justify-content: center;
