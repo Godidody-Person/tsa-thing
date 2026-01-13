@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'app'], function () {
     //post
     Route::post('/create', [ResourceController::class, 'create'])->name('app.create');
 
-    Route::put('/resource/edit/{id}', [ResourceController::class, 'updateResource'])->name('app.resource.edit');
+    Route::put('/resource/edit/{id}', [ResourceController::class, 'updateResource'])->name('app.resource.editThing');
     Route::delete('/resource/delete/{id}', [ResourceController::class, 'deleteResource'])->name('app.resource.delete');
 });
 

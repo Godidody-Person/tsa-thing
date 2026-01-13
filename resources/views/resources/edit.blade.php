@@ -5,7 +5,7 @@
 @section('content')
     <h1>Edit Resource</h1>
     <div class="panel">
-        <form action="{{ route('app.resource.edit', $resource->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('app.resource.editThing', $resource->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <label for="name">Name</label>
