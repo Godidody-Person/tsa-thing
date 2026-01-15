@@ -23,6 +23,9 @@ Route::get('/profile/{id}', [AuthController::class, 'viewProfile'])->name('app.p
 
 Route::get('/search', [ResourceController::class, 'search'])->name('search');
 
+Route::get('/chat', function(){ return view('chat'); })->name('chat');
+Route::post('/sendChat', [ResourceController::class, 'getChatResult'])->name('sendChat');
+
 // Authentication routes
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login')->middleware('guest');
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register')->middleware('guest');

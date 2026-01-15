@@ -8,6 +8,8 @@ use App\Models\Resource;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use Prism\Prism\Facades\Prism;
+use Prism\Prism\Enums\Provider;
 
 class ResourceController extends Controller
 {
@@ -138,5 +140,22 @@ class ResourceController extends Controller
         $search = $request->search;
         $resources = Resource::where('name', 'like', '%' . $search . '%')->get();
         return view('search_results', compact('resources'));
+    }
+
+    public function getChatResult(Request $request){
+        $request->validate([
+            'query' => 'required|string|max:255'
+        ]);
+
+        $query = $request->input('query');
+
+        $response = Prism::text()
+            ->using(Provider::OpenRouter, 'nvidia/nemotron-3-nano-30b-a3b:free')
+            ->withPrompt($query)
+            ->generate();
+
+        return json_encode([
+            'response' => $response->text
+        ]);
     }
 }

@@ -11,6 +11,7 @@
                 <button type="submit" aria-label="Search"><i class="material-symbols-outlined">search</i></button>
             </div>
         </form>
+        <a href="{{ route('chat') }}" class="button normal">Chat</a>
     </div>
 
     @auth
